@@ -1,0 +1,7 @@
+basepoint
+homotopic
+homeomorphic
+homotopy
+homeo
+surjection
+nullhomotopic

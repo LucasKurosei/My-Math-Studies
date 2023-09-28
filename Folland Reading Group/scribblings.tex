@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{amsmath}
+\input{preamble}
+
+\newcommand*\intd{\mathop{}\!\mathrm{d}}
+
+\begin{document}
+\begin{align}
+    P(X\text{ is rational}) &= \int _{\bQ\cap[0, 1]}1\intd x \nonumber \\
+    &= \int_0^1f(x)\intd x \nonumber \\
+    f(x) = 
+    \begin{cases}
+        1 &\text{if }x \text{ is rational}\\
+        0 &\text{if }x \text{ is irrational.}
+    \end{cases} \nonumber
+\end{align}
+
+$P=\{x_1, x_2, \dots, x_n\}\subset [0, 1]$
+\begin{align}
+    \underset{x\in [x_i, x_{i+1}]}{\sup}f(x)&=1 \nonumber \\
+    \underset{x\in [x_i, x_{i+1}]}{\inf}f(x)&=0 \nonumber \\
+    \overline{\int_0^1}f(x)\intd x &=1\neq 0 = \underline{\int_0^1}f(x)\intd x \nonumber \\
+    \underline{\int_0^1}f(x)\intd x &=0
+\end{align}
+if $P(X$ is rational$)>0$
+
+then $P(X$ is real$)\to\infty$
+
+$\lim_{n\to\infty}\int f_n(x)\intd \mu = \int \lim_{n\to\infty} f_n(x)\intd \mu$
+
+$\mu\colon \mathcal{P}(\bR^n)\longrightarrow [0, +\infty]$
+
+$\mu(E)=$ the "volume" of $E$
+
+\begin{enumerate}
+    \item for a countable collection of disjoint sets $\{E_\alpha\}_{\alpha \in A}$
+    $$
+        \mu\left(\bigcup_{\alpha \in A}E_\alpha\right) = \sum_{\alpha \in A}\mu(E_\alpha)
+    $$
+    \item congruent sets have the same measure
+    \item $\mu([0, 1]^n)=1$
+\end{enumerate}
+\begin{enumerate}
+    \item for a countable collection of disjoint sets $\{E_\alpha\}_{\alpha \in A}$
+    $$
+        \mu\left(\bigcup_{\alpha \in A}E_\alpha\right) = \sum_{\alpha \in A}\mu(E_\alpha)
+    $$
+    \item congruent sets have the same measure
+    \item $\mu([0, 1]^n)=1$
+\end{enumerate}
+
+
+$\mu(E_1\cup E_2\cup E_3)=\mu(E_1) + \mu(E_2) + \mu(E_3)$
+
+$\mu(E)=\mu(F)$
+
+$\mu([0, 1]^n)=1$
+\end{document}

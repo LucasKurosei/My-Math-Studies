@@ -1,0 +1,204 @@
+\documentclass{article}
+
+\usepackage{preamble}
+\graphicspath{ {../}}
+\newcommand{\hmwkTitle}{5th\ week\ hw}
+\newcommand{\hmwkDueDate}{February 12, 2014}
+\newcommand{\hmwkClass}{Measure Theory}
+\newcommand{\hmwkClassTime}{Chapter 3}
+\newcommand{\hmwkAuthorName}{}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate\ at 3:10pm}\\
+    \includegraphics[scale=0.2]{frog} \\
+    \vspace{0.1in}\large{\textit{\hmwkClassTime}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx  
+\newcommand{\dx}{\mathrm{d}x}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+\begin{homeworkProblem}
+    \begin{enumerate}[label=\alph*.]
+        \item Suppose $T$ is bounded, that means
+        \[\norm{T(x+h)-T(x)}_{\mfk{Y}}=\norm{T(h)}_\mfk{Y}\leq c\norm{h}_\mfk{X}\]
+        so that as $h\to 0$, $\norm{T(x+h)-T(x)}_{\mfk{Y}}\to 0$ which proves $T$ is continuous.
+
+        Now suppose $T$ is continuous, let $\delta>0$ be such that for all $\norm{h}_\mfk{X}<\delta$
+        \[\norm{T(h)}_\mfk{Y}<1\]
+        and let $0<c<\delta$, that would mean for all $x$, $\norm{\frac{cx}{\norm{x}_\mfk{X}}}_\mfk{X}<\delta$ which means
+        \[\norm{T\bigg(\frac{cx}{\norm{x}_\mfk{X}}\bigg)}_\mfk{Y}<1\]
+        and hence
+        \[\norm{T(x)}_\mfk{Y}=\frac{\norm{x}_\mfk{X}}{c}\norm{T\bigg(\frac{cx}{\norm{x}_\mfk{X}}\bigg)}_\mfk{Y} \leq \frac{1}{c}\norm{x}_\mfk{X}\]
+        \item we can define $\norm{-}_{\operatorname{op}}$ as
+        \[\norm{T}_{\operatorname{op}} = \inf\{c\,:\,\norm{T(x)}_\mfk{Y}<c\norm{x}_\mfk{X},\, x\in\mfk{X}\}\]
+        which is clearly a norm.
+
+        Now, to prove $\mfk{X}^*$, suppose $\{T_n\}_0^\i$ is a cauchy sequence in $\mfk{X}^*$, then for all $x\in\mfk{X}$ the sequence $\{T_n(x)\}_0^\i$ is a cuachy sequence since
+        \[\abs{T_n(x)-T_m(x)}\leq \norm{T_n-T_m}_{\operatorname{op}}\norm{x}_\mfk{X}\]
+        and the RHS goes to 0 as $n,m\to\i$ and since the $\mfk{X}$ is a banach space we can define $T$ such that
+        \[T(x)=\lim_{n\to\i}T_n(x)\]
+        which is clearly a linear operator and it's bounded because
+        \[\abs{T_n(x)} \leq \abs{T_n(x)-T_N(x)}+\abs{T_N(x)}\leq\norm{x}_\mfk{X}+\abs{T_N(x)} \leq (1+\norm{T_N}_{\operatorname{op}})\norm{x}_\mfk{X}\]
+        for all $n>N$ for some $N\in\bN$ and hence, by letting $n\to\i$, we find that $T$ is bounded.
+    \end{enumerate}
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    \begin{enumerate}[label=\alph*.]
+        \item It's obvious that $M(X)$ is a complex vector space and that $\norm{-}_{TV}$ is a norm so it suffices to prove that $M(X)$ is complete under the metric the norm induces.
+        
+        Let $\{\lambda_n\}_{i=0}^\i$ is a cauchy sequence in $M(X)$. First, we note that $\{\lambda_n(E)\}_{i=0}^\i$ is cauchy for all $E\in\mcl{M}$ since
+        \[\abs{\lambda_m(E)-\lambda_n(E)} \leq \abs{\lambda_m-\lambda_n}(E) \leq \abs{\lambda_m-\lambda_n}(X) < \eps\]
+        for some $m>n>N\in\bN$ for all $\eps>0$, and hence we define $\lambda:\mcl{M}\longrightarrow \bC$ as
+        \[\lambda(E) = \lim_{n\to\i}\lambda_n(E)\]
+        and we are going to prove that $\lambda$ is a complex measure: it's obvious that
+        \[\lambda(\varnothing)=\lim_{n\to\i}\lambda_n(\varnothing)=0\]
+        and it's obvious that $\lambda$ is finitely additive. Now let $\eps>0$ and $\{E_n\}_{n=0}^\i$ is a sequence of disjoint sets of $\mcl{M}$. Choose $N_1\in\bN$ such that for all $n\geq N_1$
+        \[\abs{\lambda_n-\lambda_{N_1}}(X)<\eps\]
+        we know that $\abs{\lambda_n(E)}\to\abs{\lambda(E)}$ for all $E\in\mcl{M}$ and by using Fatou's lemma on $\ell^1$ we can see that
+        \begin{align*}
+            \sum_{i=0}^\i\abs{\lambda(E_i)} &\leq \liminf_{n\to\i}\sum_{i=0}^\i\abs{\lambda_n(E_i)} \\
+            &\leq \liminf_{n\to\i}\sum_{i=0}^\i\abs{\lambda_n}(E_i) \\
+            &= \lim_{n\to\i}\abs{\lambda_n}\biggl(\bigcup_{i=0}^\i E_i\biggr) \\
+            &\leq \lim_{n\to\i}\abs{\lambda_n}(X)
+        \end{align*}
+        and the last limit exists since $\{\abs{\lambda_n}(X)\}_{n=0}^\i$ is cauchy and hence $\sum_{i=0}^\i\lambda(E_i)$ converges absolutely. We can then find an $M_1\in\bN$ such that for all $m\geq M_1$ we have
+        \begin{equation}
+            \abs{\sum_{i=m+1}^\i\lambda(E_i)}<\eps \tag{1}
+        \end{equation}
+        and since $\sum_{i=0}^\i \lambda_{N_1}(E_i) = \lambda_{N_1}\bigl(\bigcup_0^\i E_i\bigr)$ converges we can find an $M_2\in\bN$ such that for all $m\geq M_2$
+        \begin{equation}
+            \abs{\sum_{i=m+1}^\i\lambda_{N_1}(E_i)}<\eps \tag{2}
+        \end{equation}
+        and put $M=\max(M_1, M_2)$. Now by the finite additivity we can find an $N_2\in\bN$ such that for all $n>N_2$
+        \begin{equation}
+            \abs{\sum_{i=0}^{M}\lambda(E_i)-\sum_{i=0}^{M}\lambda_n(E_i)}<\eps \tag{3}
+        \end{equation}
+        put $N=\max(N_1, N_2)$ now for all $n>N$ we can see that
+        \begin{align*}
+            \abs{\sum_{i=M+1}^\i \lambda_n(E_i)}-\abs{\sum_{i=M+1}^\i\lambda_{N_1}(E_i)} &\leq \abs{\sum_{i=M+1}^\i (\lambda_n-\lambda_{N_1})(E_i)} \\
+            &= \abs{(\lambda_n-\lambda_{N_1})\biggl(\bigcup_{i=M+1}^\i E_i\biggr)} \\
+            &\leq \abs{\lambda_n-\lambda_{N_1}}\biggl(\bigcup_{i=M+1}^\i E_i\biggr) \\
+            &\leq \abs{\lambda_n-\lambda_{N_1}}(X)<\eps
+        \end{align*}
+        and from (2) we can see that
+        \begin{equation}
+            \abs{\sum_{i=M+1}^\i \lambda_n(E_i)}<\eps + \abs{\sum_{i=M+1}^\i \lambda_{N_1}(E_i)}<2\eps \tag{4}
+        \end{equation}
+        and finally, from (1), (3) and (4), we get
+        \begin{align*}
+            \abs{\sum_{i=0}^\i\lambda(E_i)-\lambda_n\biggl(\bigcup_{i=0}^\i E_i\biggr)} &= \abs{\sum_{i=0}^\i\lambda(E_i)-\sum_{i=0}^\i\lambda_n(E_i)} \\
+            &\leq \abs{\sum_{i=0}^M\lambda(E_i)-\sum_{i=0}^M\lambda_n(E_i)}+\abs{\sum_{i=M+1}^M\lambda(E_i)} + \abs{\sum_{i=M+1}^M\lambda_n(E_i)} \\
+            &< 4\eps
+        \end{align*}
+        which proves that
+        \[\sum_{i=0}^\i\lambda(E_i) = \lim_{n\to\i} \lambda_n\biggl(\bigcup_{i=0}^\i E_i\biggr)=\lambda\biggl(\bigcup_{i=0}^\i E_i\biggr)\]
+        and hence $\lambda$ is a complex measure. And from that it is easy to see that $\lambda_n\to\lambda$ in $\norm{-}_{\operatorname{TV}}$ since
+        \[\abs{\lambda-\lambda_n}(X)=\abs{\Re(\lambda-\lambda_n)+\Im(\abs{\lambda-\lambda_n})}(X) \leq \abs{\Re(\lambda-\lambda_n)}(X)+\abs{\Im(\abs{\lambda-\lambda_n})}(X)\]
+        and the latter goes to $0$ as $n\to\i$
+        \item Call this transformation $T$. It's obvious that 
+        \[\dd T(af+bg)=(af+bg)\dd\mu=a(f\dd\mu)+b(g\dd\mu)=a\bigl(\dd T(f)\bigr) + b\bigl(\dd T(g)\bigr)\]
+        for all $f,g\in L^1(\mu)$ and $a,b\in\bR$. And since $\dd\abs{T(f)}=\abs{f}\dd\mu$ we can see that
+        \[\norm{f}_1=\int_X \abs{f}\dd\mu=\abs{T(f)}(X)=\norm{T(f)}_{\operatorname{TV}}\]
+        and, finally, to prove it's an embedding, suppose $T(f)=T(g)$, that means
+        \[\int_E f\dd\mu = \int_E g\dd\mu\]
+        for all $E\in\mcl{M}$ which means $f=g$ due to proposition 2.23.b.
+    \end{enumerate}
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    \begin{enumerate}[label=\alph*.]
+        \item Due to the concavity of $\log$
+        \[\log\bigg(\frac{1}{p}a^p+\frac{1}{q}b^q\bigg)=\log\bigg(\frac{1}{p}a^p+\bigg(1-\frac{1}{p}\bigg)b^q\bigg) \geq \frac{1}{p}\log(a^p)+\frac{1}{q}\log(b^q) = \log(ab)\]
+        the inequality follows immediately.
+        \item If the inequality holds for $f$ and $g$ then it should hold for $af$ and $bg$ as well and hence we can assume WOLG that $\norm{f}_p=\norm{g}_q=1$. Now using young's inequality we get
+        \[\abs{fg} \leq \frac{f^p}{q} + \frac{g^q}{q}\]
+        from which
+        \[\int_X \abs{fg} \dd\mu \leq \frac{(\norm{f}_p)^p}{p} + \frac{(\norm{g}_q)^q}{q} = 1 = \norm{f}_p\norm{g}_q\]
+        and hence we are done.
+
+        To prove minkowski first we need to see that $q = \frac{p}{p-1}$ and that $\abs{f+g}^p\leq(\abs{f}+\abs{g})\abs{f+g}^{p-1}$ hence
+        \begin{align*}
+            \norm{f+g}_p^p &= \norm{\abs{f+g}^p}_1 \\
+            &\leq \norm{\abs{f}(f+g)^{p-1}}_1+\norm{\abs{g}(f+g)^{p-1}}_1 \\
+            &\leq (\norm{f}_p+\norm{g}_p)\norm{(f+g)^{p-1}}_q \\
+            &= (\norm{f}_p+\norm{g}_p)\norm{f+g}_p^{p-1}
+        \end{align*}
+        from which the inequality follows immediately.
+        \item It's obvious that this mapping is well defined since integrals are invariant under change on zero-measure sets so if $f_1=f_2$ a.e. then $T(f_1)=T(f_2)$ and $T(f)$ does define a bounded linear operator on $L^p(X, \bR)$ since
+        \[(T(f))(ag_1+bg_2) = \int_X f(ag_1+bg_2)\dd\mu = a\int_X fg_1\dd\mu + b\int_X fg_2\dd\mu = a\cdot(T(f))(g_1)+b\cdot(T(f))(g_2)\]
+        and due to Hölder's inequality,
+        \[\norm{(T(f))(g)}_\bR = \abs{\int_X fg\dd\mu} \leq \norm{f}_q\norm{g}_p = c\norm{g}_p\]
+        where $c=\norm{f}_q$ is a constant.
+        
+        To prove it's an isometric mapping it's suffices to see that $\norm{T(f)}_{\operatorname{op}}=\norm{f}_q$ due to Hölder's inequality and realizing that the equality holds whenver $f^p=g^q$. That is, the inequality
+        \[\norm{T(f)(g)}_\bR\leq c\norm{g}_p\]
+        doesn't always hold whenver $c<\norm{f}_q$. 
+        
+        Finally, to prove that $T$ is an embedding, suppose that $(T(f_1))(g)=(T(f_2))(g)$ for all $g\in L^p(X,\bR)$, that means, for all measurable sets $E$,
+        \[\int_E f_1\dd\mu = \int_X f_1\Chi_E\dd\mu = \int_X f_2\Chi_E\dd\mu = \int_E f_2\dd\mu\]
+        which proves that $f_1=f_2$ due to proposition 2.23.b.
+        \item First we prove that $\lambda$ is a signed measure: It's obvious that $\lambda(\varnothing)=0$. Now let $\{A_n\}_0^\i$ be a sequence of disjoint measurable sets, $A=\bigcup_0^\i A_n$, and $\eps>0$
+        \begin{enumerate}[label=\textbf{case} \#\arabic*:]
+            \item $\lambda(A_n)\leq\lambda(A)<\i$: Let $E_n\subseteq A_n$ be a measurable set such that
+            \[\Lambda(E_n)>\lambda(A_n)-\frac{\eps}{2^n}\]
+            so that $\bigcup E_n\subset\bigcup A_n$ and
+            \begin{align*}
+                \lambda(A) &\geq \Lambda\biggl(\Chi_{\bigcup_{n=0}^\i E_n}\biggr) \\
+                &=\sum_{n=0}^\i \Lambda(\Chi_{E_n}) \\
+                &> \sum_{n=0}^\i\lambda(A_n)-\eps
+            \end{align*}
+            from which we can conclude that
+            \[\lambda(A)\geq\sum_{n=0}^\i\lambda(A_n) \tag{1}\]
+            now let $E\subseteq\bigcup_{n=0}^\i A_n$ such that
+            \[\lambda(A)-\eps<\Lambda(\Chi_E)\]
+            but then we have
+            \begin{align*}
+                \lambda(A)-\eps &< \Lambda(\Chi_E) \\
+                &= \Lambda(\Chi_{\bigcup_0^\i (E\cap A_n)}) \\
+                &= \sum_{n=0}^\i \Lambda(\Chi_{E\cap A_n}) \\
+                &\leq \sum_{n=0}^\i\lambda(A_n)
+            \end{align*}
+            from which
+            \[\lambda(A)\leq\sum_{n=0}^\i\lambda(A_n) \tag{2}\]
+            and from (1) and (2) we can see that
+            \[\lambda(A)=\sum_{n=0}^\i\lambda(A_n)\]
+            \item $\lambda(A_n)=\i$ for some $n$: since
+            \[\{\Lambda(\chi_E)|E\subset A_n, \mu(E)<\i\}\subset \{\Lambda(\chi_E)|E\subset A, \mu(E)<\i\}\]
+            $\lambda(A)$ must be infinite as well.
+            \item $\lambda(A)=\i$: there must exist a sequence of $E_n$ of measureable sets such that $\Lambda(\Chi_{E_i})\to\i$ as $i\to\i$ then for all $i$ we see that
+            \[\Lambda(\Chi_{E_i}) = \sum_{n=0}^\i \Lambda(\Chi_{E_i\cap A_n}) \leq \sum_{n=0}^\i \lambda(A_n)\]
+        \end{enumerate}
+        and hence $\lambda$ is a measure.
+
+        Now to prove that $\Lambda(f)=\int_X f\dd\mu$ we'll be satsfied with proving the statement for when $f$ is a simple function and the general case follows from the usual reasoning: First suppose that $\mu$ is finite and that $ E\subseteq A$ which means
+        \[\Lambda(\Chi_A) = \Lambda(\Chi_E) + \Lambda(\Chi_{A\setminus E}) \geq \Lambda(E)\]
+        and hence
+        \[\int_X \Chi_A\dd\lambda = \lambda(A) = \sup\{\Lambda(\Chi_E)|E\subseteq A\} = \Lambda(\Chi_A)\]
+        and to expand this to the case where $\mu$ is $\sigma$-finite let $\{E_n\}_0^\i$ is a sequence of finite disjoint measurable sets we then have
+        \[\int_X \Chi_A\dd\lambda = \sum_{n=0}^\i \int_{E_n}\Chi_A\dd\lambda = \sum_{n=0}^\i \int_{E_n}\Chi_{E_n\cap A}\dd\lambda = \sum_{n=0}^\i \Lambda(\Chi_{E_n\cap A}) = \Lambda(\Chi_A)\]
+
+        Now if $f\in L^p(\mu)$ then $\int_X f \dd\lambda=\Lambda(f)<\i$ which means $\int_X \abs{f} \dd\lambda<\i$ and hence $L^p(\mu)\subseteq L^1(\lambda)$
+        \item suppose $E$ is a $\mu$-zero set, that means
+        \[\Lambda(\Chi_E) \leq \norm{\Lambda}_{\operatorname{op}}\norm{\Chi_E}_p = 0\]
+        hence $\lambda(E) = 0$ therefore $\lambda\ll\mu$ and due to the Radon-Nikodym there exists a $g$ such that $\dd\lambda=g\dd\mu$ and 
+        \[\int_X fg\dd\mu = \int_X f\dd\lambda = \Lambda(f)\]
+        \item 
+    \end{enumerate}
+\end{homeworkProblem}
+\end{document}
