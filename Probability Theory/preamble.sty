@@ -1,0 +1,124 @@
+\ProvidesPackage{preamble}
+% Always typeset math in display style
+
+
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+% Standard mathematical typesetting packages
+% \usepackage{thmenvs}
+\usepackage{amsfonts, amsthm, amsmath, amssymb}
+\usepackage{mathtools}  % Extension to amsmath
+
+% Symbol and utility packages
+\usepackage{cancel, textcomp}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage[nointegrals]{wasysym}
+
+% Extras
+%\usepackage{tikz-cd}  % For drawing commutative diagrams easily
+\usepackage{multicol, titletoc, bookmark, parskip}
+\usepackage{microtype}  % Minature font tweaks
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{graphicx}
+%\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+% \usetikzlibrary{automata,positioning}
+
+% document config
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkClass}
+\chead{\hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+% custom envs
+
+
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{homeworkProblemCounter}
+}{
+    \exitProblemHeader{homeworkProblemCounter}
+}
+
+% better left right
+\let\oldleft=\left
+\let\oldright=\right
+
+\def\left{\mathopen{}\mathclose\bgroup\oldleft}
+\def\right{\aftergroup\egroup\oldright}
+
+% Sometimes helpful macros
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\func}[3]{#1\colon#2\to#3}
+\newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto#5}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\symdiff}{\mathbin{\vcenter{\hbox{\scalebox{.75}{$\triangle$}}}}}
+
+\renewcommand{\div}{\divisionsymbol}
+
+% shortcuts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+\def\mcl#1{\mathcal{#1}}
+
+\def\bN{\mbb{N}}
+\def\bC{\mbb{C}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+\def\Chi{\scalebox{1.25}{$\chi$}}
+\newcommand*\dd{\mathop{}\!\mathrm{d}}
+\newcommand{\rp}{\right)}
+\newcommand{\lp}{\left(}
+\newcommand{\rb}{\right]}
+\newcommand{\lb}{\left[}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\la}{\left\langle}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\heps}{\frac{\eps}{2}}
+\DeclareMathOperator{\img}{Img}
+\renewcommand{\Re}{\mathfrak{Re}}
+\renewcommand{\Im}{\mathfrak{Im}}
+\let\oldi\i
+\let\i\infty
