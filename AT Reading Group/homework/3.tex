@@ -1,12 +1,10 @@
-\documentclass{article}
+\documentclass{pset}
 
-\usepackage{preamble}
-\graphicspath{ {../}}
-\newcommand{\hmwkTitle}{3rd\ hw}
-\newcommand{\hmwkDueDate}{February 12, 2014}
-\newcommand{\hmwkClass}{Algebraic Topology}
-\newcommand{\hmwkClassTime}{Section 1.2}
-\newcommand{\hmwkAuthorName}{}
+\renewcommand{\hmwkTitle}{3rd\ hw}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{Algebraic Topology}
+\renewcommand{\hmwkClassTime}{Section 1.2}
+\renewcommand{\hmwkAuthorName}{}
 
 
 \begin{document}
@@ -15,7 +13,7 @@
 
 \pagebreak 
 
-\begin{homeworkProblem}
+\begin{problem}
     \begin{enumerate}[label=1.2.\arabic*]
         \setcounter{enumi}{6}
         \item We can endow $X$ with a cell structure by letting $X^0$ be a singleton and $X^1$ be homeo $S^1 \vee S^1$ by attaching two 1-cells in the obvious way, and then we can obtain $X$ by attaching \textbf{two} 2-cells through a map that takes the upper semicircle of the boundary of the 2-cell to the first circle in $S^1 \vee S^1$ and the lower semicircle to the second. (see diagram below.) Now we can apply proposition 1.26.a to see that
@@ -34,8 +32,8 @@
             \[\pi_1(SX) = \bigast^\i \bZ\]
         \end{enumerate}
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}
         \item Let $\bR^*$ be the line with two origins and $0$ and $0'$ are the two origins. Suppose $f$ is a loop and let $F\colon I \times I \to \bR^*$ be a homotopy between $f$ and a loop that never traverses $0'$ defined as
         \[F(s, t) = 
@@ -48,5 +46,5 @@
         \[F^{-1}(O) = F^{-1}(\{0, 0'\}) \cup F^{-1}(O \setminus \{0, 0'\}) = f^{-1}(\{0, 0'\}) \times I \cup f^{-1}(O \setminus \{0, 0'\}) \times I = f^{-1}(O) \times I\]
         which is open hence $F$ is continuous
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 \end{document}

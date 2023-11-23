@@ -1,12 +1,10 @@
-\documentclass{article}
+\documentclass{pset}
 
-\usepackage{preamble}
-\graphicspath{ {../}}
-\newcommand{\hmwkTitle}{5th\ week\ hw}
-\newcommand{\hmwkDueDate}{February 12, 2014}
-\newcommand{\hmwkClass}{Measure Theory}
-\newcommand{\hmwkClassTime}{Chapter 2}
-\newcommand{\hmwkAuthorName}{}
+\renewcommand{\hmwkTitle}{5th\ week\ hw}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{Measure Theory}
+\renewcommand{\hmwkClassTime}{Chapter 2}
+\renewcommand{\hmwkAuthorName}{}
 
 %
 % Title Page
@@ -34,7 +32,7 @@
 \maketitle
 
 \pagebreak 
-\begin{homeworkProblem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item 
         \begin{enumerate}
@@ -55,8 +53,8 @@
         and hence the statement is true for characteristic functions and also simple functions by linearity. Now for the general case let $\{\phi_i\}$ be an increasing sequence of simple functions that converge to $f$ a.e. so by applying the MCT we get
         \[\int f\dd\nu = \lim_{i\to\i}\int \phi_i\dd\nu = \lim_{i\to\i}\int \phi_i\circ T\dd\mu = \int f\circ T\dd\mu\]
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}[33]
+\end{problem}
+\begin{problem}[33]
     suppose $\int f\geq \liminf\int f_n$, that means there exists a subsequence $\{f_{n_k}\}_{k=0}^\i$ such that $\liminf\int f_n=\lim \int f_{n_k}$ but the subsequence obviously still converges to $f$ in measure so it must contain a subsubsequence $\{f_{n_{k_j}}\}_{j=0}^\i$ that converges to $f$ pointwise a.e. but using Fatou's lemma we see that
     \[
         \int f\leq \liminf_{j\to\i} \int f_{n_{k_j}} = \lim_{k\to\i} \int f_{n_k} = \liminf_{n\to\i} \int f_n
@@ -65,8 +63,8 @@
     \[
         \int f = \liminf_{n\to\i}\int f_n
     \]
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item $f$ is measurable since it's the limit of some subsequence of $\{f_n\}$ which are all measurable functions and it's integrable since $f=\lim f_n\leq g$. Now we note that $f_n+g\geq 0$ and $g-f_n\geq 0$ and both sequences converge in measure to $f+g$ and $g-f$ respectively so we can use the previous problem to conclude that
         \begin{align*}
@@ -79,13 +77,13 @@
             \lim_{n\to\i}\int\abs{f-f_n}=0
         \]
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}[40]
+\end{problem}
+\begin{problem}[40]
     It suffices to prove that $E_n(k)$, as defined in the orginal proof, are eventually finite. Indeed, according to the DCT, $f_n\to f$ in $L^1$ but if $E_n(k)$ \emph{aren't} eventually finite then 
     \[\int \abs{f_n-f}\geq \int_{E_n(k)}\abs{f_n-f}\geq \int_{E_n(k)}\frac{1}{k} = \i\]
     which is a contradiction. 
-\end{homeworkProblem}
-\begin{homeworkProblem}[44]
+\end{problem}
+\begin{problem}[44]
     Let $\eps>0$. We're going to prove the result for postive real functions first. Notice that
     \[\sum_{i=0}^\i\mu\big(f^{-1}\big([i, i+1)\big)\big)=\mu([a, b])\]
     is a convergent sequence which means there exists an $N\in\bN$ such that
@@ -96,8 +94,8 @@
 
     Now for the general case, we can decompose $f$ as $f=(g^+-g^-)+i(h^+-h^-)$ where $g^+,g^-,h^+,h^-$ are all positive functions from which we can extract sets $E_1, E_2, E_3, E_4$ on the intersection of which all our functions (hence $f$ as well) are continuous and
     \[\mu\biggl(\bigcup_1^4 E_i\biggr)<4\cdot \frac{\eps}{4}=\eps\]
-\end{homeworkProblem}
-\begin{homeworkProblem}[52]
+\end{problem}
+\begin{problem}[52]
     (for convennience, let's order the elements in $Y=\{y_i\}_{i=0}^\i$)
     
     First we note that it is evident that if $g\in L^+(\nu)$ then
@@ -119,6 +117,6 @@
     \end{align*}
     This establishes Tonelli 's theorem and also shows that if $f\in L^+(\mu\times\nu)$ and $\int f<\i$, then $\int f_x\dd\nu<\i$ a.e. and $\int f^y\dd\mu<\i$ a.e., that is, $f_x\in L^1(\nu)$ for a.e. $x$ and $f^y \in L^1(\mu)$ for a.e. $y$. If $f\in L^1(\mu\times\nu)$, then, the conclusion of Fubini's theorem follows by applying these results to the positive and
 negative parts of the real and imaginary parts of f. 
-\end{homeworkProblem}
+\end{problem}
 
 \end{document}

@@ -1,13 +1,13 @@
-\documentclass{article}
+\documentclass{pset}
 
 \usepackage{preamble}
 \usepackage[new]{old-arrows}
 \graphicspath{ {../}}
-\newcommand{\hmwkTitle}{2nd\ hw}
-\newcommand{\hmwkDueDate}{February 12, 2014}
-\newcommand{\hmwkClass}{Algebraic Topology}
-\newcommand{\hmwkClassTime}{Section 1.1}
-\newcommand{\hmwkAuthorName}{DarQ}
+\renewcommand{\hmwkTitle}{2nd\ hw}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{Algebraic Topology}
+\renewcommand{\hmwkClassTime}{Section 1.1}
+\renewcommand{\hmwkAuthorName}{DarQ}
 
 
 
@@ -17,7 +17,7 @@
 
 \pagebreak 
 
-\begin{homeworkProblem}
+\begin{problem}
     \begin{enumerate}
         \item The statement is only true for $n \geq 3$
         \item With the above modification, we know the statement is true if only one point is removed. We also know the spaces are path connected hence our choice of basepoint is immaterial, and it suffices to prove that they have trivial fundamental group.
@@ -28,9 +28,9 @@
         \[B = (-1, \i)\times\bR^{n-1}\]
         which are both homeo $\bR^n$ and make sure one of the removed points is in the complement of $A$ and the rest is in the complement of $B$. Thereby, we get 2 path-connected open sets $A'$ and $B'$ whose intersection is path connected such that $A'$ is homeo $\bR^n$ with $k$ points removed and $B'$ is homeo $\bR^n$ with one point removed. Hence, if you take any loop based at, say, $0$, due to lemma 1.15 (see hatcher) would be homotopic to a product of loops each of which is entirely contained in either $A'$ or $B'$ but any such loop is homotopic to the constant loop and hence we are done.
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 
-\begin{homeworkProblem}
+\begin{problem}
     \begin{enumerate}
         \item Let $T$ be the linear transformation associated with $A$. First, we notice that $T$ takes vectors with non-negative entries to vectors with non-negative entries. Therefore, if we let
         \[Q^1 = \{(x, y, z)\in\bR^3|x,y,z\geq 0\}\]
@@ -48,8 +48,8 @@
         \[Q^1 \cap S^2 \xlongrightarrow{T} Q^1 \setminus \{0\} \xlongrightarrow{\rho} Q^1 \cap S^2\]
         is well-defined still. And indeed it is since invertible matrices don't send non-zero vectors to zero.
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     We're first going to do b and c and then from that we're going to derive a.
     \begin{enumerate}
         \setcounter{enumi}{1}
@@ -68,9 +68,9 @@
         \[2r\omega\simeq r\varsigma = \varsigma\]
         but since $2x=1$ doesn't have a solution in $\bZ$ we arrive at a contradiction.
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 
-\begin{homeworkProblem}
+\begin{problem}
     \begin{enumerate}[label=1.1.\arabic*]
         \item This is essentially the exact same proof as the proof that traversing a loop and then traversing it backwards is homotopic to the constant loop except for paths general and not just loops.
         \item Suppose $h_0\simeq h_1$ through the homotopy $h_t$ then $h_0\cdot f\cdot\bar{h}_0\simeq h_1 \cdot f \cdot \bar{h}_1$ through $h_t \cdot f \cdot \bar{h}_t$
@@ -142,8 +142,8 @@
             \item 
         \end{enumerate}
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}
         \item This part is just a bunch of calculations, so I'll just lay them out here in succession
         \begin{enumerate}[label=\roman*.]
@@ -212,7 +212,7 @@
         \end{enumerate}
         \item This one follows the same logic as the last, so I thought it superfluous to type it again :).
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 
 \begin{align*}
     X_n' &= X_n' \cup \bigcup_{e\in \mathcal{E}'} e, & X_n' &= X_n' \cup \bigcup_{e\in \mathcal{E}'} e.

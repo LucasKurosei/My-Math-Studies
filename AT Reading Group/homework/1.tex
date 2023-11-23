@@ -1,11 +1,11 @@
-\documentclass{homework}
+\documentclass{pset}
 
 \graphicspath{ {../}}
-\newcommand{\hmwkTitle}{1st\ hw}
-\newcommand{\hmwkDueDate}{February 12, 2014}
-\newcommand{\hmwkClass}{Algebraic Topology}
-\newcommand{\hmwkClassTime}{Chapter 0}
-\newcommand{\hmwkAuthorName}{}
+\renewcommand{\hmwkTitle}{1st\ hw}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{Algebraic Topology}
+\renewcommand{\hmwkClassTime}{Chapter 0}
+\renewcommand{\hmwkAuthorName}{}
 
 
 \begin{document}
@@ -14,10 +14,10 @@
 
 \pagebreak 
 
-\begin{homeworkProblem}[5]
+\begin{problem}[5]
     "Homeomorphic" is strictly stronger than "homotopy equivalent" since if $X\xlongrightarrow{f}Y$ is a homeomorphisms between $X$ and $Y$ then there exists  a map $g$ such that $fg=gf=\mbbm{1}\simeq \mbbm{1}$. Hence the pair of spaces in 2.2 and 2.3 are homotopy equivalent. But the pair in 2.1 are homotopy equivalent \emph{but not} homeomorphic. Indeed, since both are a defformation retraction of a plane with two holes hence they're homotopy equivalent since homotopy equivalence is an equivalence relation.
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}
         \item see diagram
 
@@ -29,8 +29,8 @@
         what the attachement map in the last step does is map $E_1$ and $E_2$ to the blue loop in $X^1$ such that the arrows match and the same as well for $E_3$ and $E_4$ onto the black loop. This is a continuous map since the restriction to each edge is continuous and the restrictions agree at the edges. Hence we get a continuous map $\partial D^{(2)}\xlongrightarrow{\varphi} X^1$.
         \item it's apparent from the fundamental polygons that attaching two mobius strips along their boundary circle is equivalent to identifying the two black edges together which coincides with what the fundamental polygon of the klein bottle tells us to do.
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}
         \item literally just
         \[f_t(x)=\frac{tx}{\norm{x}}+(1-t)x\]
@@ -63,6 +63,6 @@
         \[\Omega(\Theta(p_X(x)))= \Omega(p_Y(g(x))) = p_X(g(f(x)))\]
         but $fg(x)$ resides in the same path-component as $x$ since the homotopy between $gf$ and $\mbbm{1}$ gives us a path between them. Similar reasoning shows that $\Omega$ is also a right inverse of $\Theta$. Therefore, since $\Theta$ has an inverse, it is a bijection.
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 
 \end{document}

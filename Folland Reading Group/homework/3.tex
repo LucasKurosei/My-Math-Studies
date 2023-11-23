@@ -1,12 +1,10 @@
-\documentclass{article}
+\documentclass{pset}
 
-\usepackage{preamble}
-\graphicspath{ {../}}
-\newcommand{\hmwkTitle}{3rd\ week\ hw}
-\newcommand{\hmwkDueDate}{February 12, 2014}
-\newcommand{\hmwkClass}{Measure Theory}
-\newcommand{\hmwkClassTime}{Chapter 2}
-\newcommand{\hmwkAuthorName}{}
+\renewcommand{\hmwkTitle}{3rd\ week\ hw}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{Measure Theory}
+\renewcommand{\hmwkClassTime}{Chapter 2}
+\renewcommand{\hmwkAuthorName}{}
 
 %
 % Title Page
@@ -35,7 +33,7 @@
 
 \pagebreak 
 
-\begin{homeworkProblem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item 
         \begin{enumerate}[label=$\bullet$]
@@ -91,9 +89,9 @@
             \end{enumerate}
         \end{enumerate}
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 
-\begin{homeworkProblem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item Let $E_{n, k}=\{x\mid \abs{f(x)-f_n(x)}\geq \frac{1}{k}\}$. First, if you fix $k$ and let $n\to\i$ note that $\mu(E_{n, k})\to 0$ since $\int\abs{f-f_n}\to 0$.
         
@@ -127,9 +125,9 @@
         \]
         which would prove the sequence converges to $f$ in $L^1(X)$ which would give us d, and by using a that would give us both b and c.
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 
-\begin{homeworkProblem}
+\begin{problem}
     Since simple functions are dense in $L^1(X)$ it suffices to prove that for all $\eps>0$ and all simple functions $\phi\in L^1(X)$ there exists a function $f\in C_c(X)$ such that \(\int \abs{f-\phi}<\eps\). 
     
     Let $\sum z_j\Chi_{E_j}$ be the standard representation of $\phi$. For each $j$, we can find sets $K_j\subset E_j\subset O_j$ where $\mu(O_j\setminus E_j)<\frac{\eps}{3 \cdot 2^{j}\abs{z_j}}$ and $\mu(E_j\setminus K_j)<\frac{\eps}{3 \cdot 2^{j}\abs{z_j}}$ and using urysohn's lemma there must exist a continuous function $f_j$ such that $\Chi_{K_j}<f<\Chi_{O_j}$ and hence we have
@@ -148,6 +146,6 @@
     \end{align*}
     and we are done.
 
-\end{homeworkProblem}
+\end{problem}
 
 \end{document}

@@ -2,8 +2,8 @@
 % Always typeset math in display style
 
 
-\newcounter{homeworkProblemCounter}
-\setcounter{homeworkProblemCounter}{1}
+\newcounter{problemCounter}
+\setcounter{problemCounter}{1}
 % Standard mathematical typesetting packages
 % \usepackage{thmenvs}
 \usepackage{amsfonts, amsthm, amsmath, amssymb}
@@ -55,7 +55,7 @@
 
 \setcounter{secnumdepth}{0}
 \newcounter{partCounter}
-\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+\nobreak\extramarks{Problem \arabic{problemCounter}}{}\nobreak{}
 
 \newcommand{\enterProblemHeader}[1]{
     \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
@@ -68,15 +68,15 @@
     \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
 }
 
-\newenvironment{homeworkProblem}[1][-1]{
+\newenvironment{problem}[1][-1]{
     \ifnum#1>0
-        \setcounter{homeworkProblemCounter}{#1}
+        \setcounter{problemCounter}{#1}
     \fi
-    \section{Problem \arabic{homeworkProblemCounter}}
+    \section{Problem \arabic{problemCounter}}
     \setcounter{partCounter}{1}
-    \enterProblemHeader{homeworkProblemCounter}
+    \enterProblemHeader{problemCounter}
 }{
-    \exitProblemHeader{homeworkProblemCounter}
+    \exitProblemHeader{problemCounter}
 }
 
 % better left right

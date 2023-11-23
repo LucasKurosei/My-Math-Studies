@@ -1,12 +1,10 @@
-\documentclass{article}
+\documentclass{pset}
 
-\usepackage{preamble}
-\graphicspath{ {../}}
-\newcommand{\hmwkTitle}{2nd\ week\ hw}
-\newcommand{\hmwkDueDate}{February 12, 2014}
-\newcommand{\hmwkClass}{Folland Reading Group}
-\newcommand{\hmwkClassTime}{Chapter 1}
-\newcommand{\hmwkAuthorName}{}
+\renewcommand{\hmwkTitle}{2nd\ week\ hw}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{Folland Reading Group}
+\renewcommand{\hmwkClassTime}{Chapter 1}
+\renewcommand{\hmwkAuthorName}{}
 
 %
 % Title Page
@@ -35,7 +33,7 @@
 
 \pagebreak 
 
-\begin{homeworkProblem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item let $\mu^*(E)=\inf\bigg\{\sum_{i=1}^\i\mu_{|\mcl{A}}(A_i)\Big| E\subseteq \bigcup A_i\bigg\}$ be the outer measure induced by $\mcl{A}$ and the premeasure $\mu_{|\mcl{A}}$. Then due to proposition 1.14, $\mu^*_{|\mcl{M}}=\mu$. We could then find for each $M\in\mcl{M}$ and $\eps>0$ a sequence $\{A_i\}_{i=1}^\i\subset\mcl{A}$ such that $A=\bigcup_{i=1}^\i A_i \supset M$ and
         \[
@@ -103,8 +101,8 @@
         \end{align*}
         which is a contradiction. Now, if $\mu(E)=\i$, since $\bR$ is $\sigma$-finite, it must have a measurable subset $E'$ such that $0<\mu(E')<\i$ for which for all $\alpha<1$ we can find an interval $I$ such that $\mu(E'\cap I)>\alpha\cdot\mu(I)$ but $\mu(E\cap I)\geq \mu(E'\cap I)$ so we're done.
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item follows immediately from caratheodry (see 1.11, Folland).
         \item first we note the following lemma
@@ -124,8 +122,8 @@
         \end{trivialproof}
         now any set $L\in\mcl{L}$ can be decomposed as $L=H \cup N$ where $H \in F_\sigma \subset \mcl{B}_\bR$ and $m(N)=0$ (see 1.19, Folland) and, because of lemma 2.2, we're done.
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item first we construct a $\mu$ for $2$ spaces and then use induction.
         \begin{lemma}
@@ -140,6 +138,6 @@
         \]
         and the restriction of that to $\mcl{M}$ is a measure.
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 
 \end{document}

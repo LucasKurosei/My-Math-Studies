@@ -1,12 +1,10 @@
-\documentclass{article}
+\documentclass{pset}
 
-\usepackage{preamble}
-\graphicspath{ {../}}
-\newcommand{\hmwkTitle}{6th\ hw}
-\newcommand{\hmwkDueDate}{February 12, 2014}
-\newcommand{\hmwkClass}{Measure Theory}
-\newcommand{\hmwkClassTime}{Chapter 7}
-\newcommand{\hmwkAuthorName}{}
+\renewcommand{\hmwkTitle}{6th\ hw}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{Measure Theory}
+\renewcommand{\hmwkClassTime}{Chapter 7}
+\renewcommand{\hmwkAuthorName}{}
 
 %
 % Title Page
@@ -33,7 +31,7 @@
 
 \pagebreak 
 
-\begin{homeworkProblem}[7]
+\begin{problem}[7]
     Let $\mu=\sum_1^na_i\mu_i$. It suffices to show $\mu$ satisfies the definition of a measure
     \begin{enumerate}
         \item \(
@@ -47,8 +45,8 @@
         \end{align}
         (1) was just because all the terms were positive
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     For all $i\geq n$ for all $N\in \bN$ we have
     $$
     \bigcap_{i=1}^n\bigcup_{j=i}^\infty E_j\subseteq E_i
@@ -60,13 +58,13 @@
         \lim_{n\to\infty}\mu\lp\bigcap_{i=1}^n\bigcup_{j=i}^\infty E_j\rp&\leq\lim_{n\to\infty}\inf\{\mu(E_i)\}_{i=n}^\infty \\
         \mu(\liminf E_i)&\leq \liminf\mu(E_i)
     \end{align*}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     $$
     \mu(E)+\mu(F)=\mu(E\setminus F)+\mu(F)+\mu(E\cap F)=\mu(E\cup F)+\mu(E\cap F)
     $$
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     It suffices to confirm that $\mu_A$ satisfies the definition of a measure:
     \begin{enumerate}
         \item $\mu_E(\varnothing)=\mu(E\cap\varnothing)=\mu(\varnothing)=0$
@@ -78,8 +76,8 @@
             &= \sum_{i=1}^\infty\mu_E(E_i)
         \end{align*}
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     it suffices to prove the ($\Leftarrow$) direction for both questions. Let $\{E_i\}_1^\infty\subseteq \mathcal{M}$ be a collection of disjoint sets
     \begin{enumerate}
         \item Suppose $\mu$ is continuous from below: take $F_n=\bigcup_{i=1}^nE_i$ that means $\{F_i\}_1^\infty$ is an increasing sequences of sets. We then have
@@ -103,8 +101,8 @@
             &=\sum_{i=1}^\infty\mu(E_i)
         \end{align*}
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item suppose without loss of generality that $\mu(E)>\mu(F)$. we then have
         $$
@@ -132,5 +130,5 @@
         = \rho(E, F) + \rho(F, G)
         \]
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 \end{document}

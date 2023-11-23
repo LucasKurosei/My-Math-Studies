@@ -1,12 +1,10 @@
-\documentclass{article}
+\documentclass{pset}
 
-\usepackage{preamble}
-\graphicspath{ {../}}
-\newcommand{\hmwkTitle}{5th\ week\ hw}
-\newcommand{\hmwkDueDate}{February 12, 2014}
-\newcommand{\hmwkClass}{Measure Theory}
-\newcommand{\hmwkClassTime}{Chapter 3}
-\newcommand{\hmwkAuthorName}{}
+\renewcommand{\hmwkTitle}{5th\ week\ hw}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{Measure Theory}
+\renewcommand{\hmwkClassTime}{Chapter 3}
+\renewcommand{\hmwkAuthorName}{}
 
 %
 % Title Page
@@ -34,7 +32,7 @@
 \maketitle
 
 \pagebreak
-\begin{homeworkProblem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item Suppose $T$ is bounded, that means
         \[\norm{T(x+h)-T(x)}_{\mfk{Y}}=\norm{T(h)}_\mfk{Y}\leq c\norm{h}_\mfk{X}\]
@@ -58,8 +56,8 @@
         \[\abs{T_n(x)} \leq \abs{T_n(x)-T_N(x)}+\abs{T_N(x)}\leq\norm{x}_\mfk{X}+\abs{T_N(x)} \leq (1+\norm{T_N}_{\operatorname{op}})\norm{x}_\mfk{X}\]
         for all $n>N$ for some $N\in\bN$ and hence, by letting $n\to\i$, we find that $T$ is bounded.
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item It's obvious that $M(X)$ is a complex vector space and that $\norm{-}_{TV}$ is a norm so it suffices to prove that $M(X)$ is complete under the metric the norm induces.
         
@@ -120,8 +118,8 @@
         \[\int_E f\dd\mu = \int_E g\dd\mu\]
         for all $E\in\mcl{M}$ which means $f=g$ due to proposition 2.23.b.
     \end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
+\end{problem}
+\begin{problem}
     \begin{enumerate}[label=\alph*.]
         \item Due to the concavity of $\log$
         \[\log\bigg(\frac{1}{p}a^p+\frac{1}{q}b^q\bigg)=\log\bigg(\frac{1}{p}a^p+\bigg(1-\frac{1}{p}\bigg)b^q\bigg) \geq \frac{1}{p}\log(a^p)+\frac{1}{q}\log(b^q) = \log(ab)\]
@@ -200,5 +198,5 @@
         \[\int_X fg\dd\mu = \int_X f\dd\lambda = \Lambda(f)\]
         \item 
     \end{enumerate}
-\end{homeworkProblem}
+\end{problem}
 \end{document}
