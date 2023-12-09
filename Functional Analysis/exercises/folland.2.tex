@@ -1,0 +1,50 @@
+\documentclass{pset}
+
+\renewcommand{\hmwkTitle}{Functional Analysis}
+\renewcommand{\hmwkDueDate}{}
+\renewcommand{\hmwkClass}{Folland}
+\renewcommand{\hmwkClassTime}{Banach Space}
+\renewcommand{\hmwkAuthorName}{Lucas Kurosei}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak 
+
+\begin{problem}[23]
+    \begin{quote}
+        Starting with c. since the others I have already seen in Brezis.
+    \end{quote}
+    \begin{enumerate}[label=\alph*.]
+        \setcounter{enumi}{2}
+        \item $\alpha$ is obviously linear. It's injective since $\alpha(f)=0$ implies $f=0$. To prove it's surjective onto $\mcl{M}^0$, let $g\in\mcl{M}^0$ and define $f\in (\mfk{X}/\mcl{M})^*$ as
+        \[f(x+\mcl{M}) = g(x)\]
+        which is obviously well defined and $\alpha(f) = g$
+
+        To prove $\alpha$ is an isometry we first note that
+        \[\norm{x+\mcl{M}}_{\mfk{X}/\mcl{M}} \leq \norm{x}_{\mfk{X}}\]
+        hence the image of the unit ball in $\mfk{X}$ under the projection is contained in the unit ball of $\mfk{X}/\mcl{M}$. Therefore,
+        \begin{align*}
+            \norm{\alpha(f)}_{\mfk{X}^*} &= \sup_{\norm{x} \leq 1} \abs{\alpha(f)(x)} \\
+            &= \sup_{\norm{x} \leq 1} \abs{f(x+\mcl{M})} \\
+            &\leq \sup_{\norm{x+\mcl{M}} \leq 1} \abs{f(x+\mcl{M})} \\
+            &= \norm{f}_{(\mfk{X}/\mcl{M})^*}
+        \end{align*}
+        To prove the other side of the inquality let $\eps>0$ and fix $f\in(\mfk{X}/\mcl{M})^*$, there exists an element in $x+\mcl{M}\in\mfk{X}/\mcl{M}$ such that $\norm{x+\mcl{M}} = 1$ and
+        \[\abs{f(x+\mcl{M})} \geq \norm{f}_{(\mfk{X}/\mcl{M})^*}-\eps\]
+        and there exists and element $y\in\mfk{X}$ such that $y+\mcl{M} = x+\mcl{M}$ and
+        \[\norm{y}_\mfk{X} \leq \norm{x+\mcl{M}}_{\mfk{X}/\mcl{M}} + \eps = 1 + \eps\]
+        Therefore,
+        \begin{align*}
+            \norm{\alpha(f)}_{\mfk{X}^*} &\geq \frac{\abs{\alpha(f)(y)}}{\norm{y}} \\
+            &\geq \frac{\abs{f(x+\mcl{M})}}{1+\eps} \\
+            &\geq \frac{\norm{f}_{(\mfk{X}/\mcl{M})^*}-\eps}{1+\eps}
+        \end{align*}
+        and since $\eps$ was arbitrary we can conclude $\norm{\alpha(f)}_{\mfk{X}^*} \geq \norm{f}_{(\mfk{X}/\mcl{M})^*}$ and thereafter that
+        \[\norm{\alpha(f)}_{\mfk{X}^*} =\norm{f}_{(\mfk{X}/\mcl{M})^*}\]
+    \end{enumerate}
+\end{problem}
+\begin{problem}
+
+\end{document}

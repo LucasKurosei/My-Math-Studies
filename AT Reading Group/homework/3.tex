@@ -28,7 +28,13 @@
         \setcounter{enumi}{16}
         \item 
         \item \begin{enumerate}[label=(\alph*)]
-            \item Let the quotient map of $SX$ be $q$ and put $A_i = q\bigl(\{0, 1/i\} \times I \cup \{1/n \mid n \neq i\} \times ([0, .25) \cup (.75, 1]\bigr)$ which are evidently open, and each deformation retracts to $S^1$, and they satisfy the assumptions of Van Kampen. Furthermore, $A_i \cap A_j$ for all $i \neq j$ is contractible. Hence,
+            \item Let the quotient map of $SX$ be $q\colon X\times I \longrightarrow X$ and put 
+            \[A_i = q\bigl(\{0, 1/i\} \times I \cup \{1/n \mid n\in\bN\} \times ([0, .25) \cup (.75, 1])\bigr)\]
+            which are the image of saturated open sets and the are therefore open themselves. Each $A_i$ deformation retracts to $S^1$ hence,
+            \[\pi_1(A_i) = \pi_1(S^1) = \bZ\]
+            Furthermore, 
+            \[A_i \cap A_j = q\bigl(\{0\} \times I \cup \{1/n \mid n\in\bN\} \times ([0, .25) \cup (.75, 1])\bigr)\]
+            for all $i \neq j$ is contractible, i.e. $\pi_1(A_i \cap A_j)=0$. Hence, due to Van Kampen
             \[\pi_1(SX) = \bigast^\i \bZ\]
         \end{enumerate}
     \end{enumerate}

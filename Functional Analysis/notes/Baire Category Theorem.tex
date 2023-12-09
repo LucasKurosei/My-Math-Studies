@@ -1,0 +1,27 @@
+\documentclass{pset}
+
+\begin{document}
+\section{Proof of The Theorem}
+Suppose there exists an $x_0$ in $\Int \Bigl(\bigcup_{n=0}^\i X_i\Bigr)$, this means there exists an $r>0$ such that
+\[B(x_0, r) \subset \Bigl(\bigcup_{n=0}^\i X_i\Bigr)\]
+To arrive at a contradiction we are going to construct a sequence that converges to an element $y\in B(x_0, r)$ but $y \not\in X_n$ for all $n$:
+
+Since the interior of $X_1$ is empty, there exists an element $y\in B(x_0, r)$ and a real number $0<r_1<\min(\frac{r}{2}, \frac{1}{2})$ such that $B(y, r_1) \subset B(x_0, r) \setminus X_1$. Suppose we have already constructed a sequence up to $N$ such that $\forall i \leq j \leq N$, $0<r_i<2^{-i}$
+\begin{align}
+    B(y_j, r_j) \subset B(y_i, r_i), \\
+    \overline{B(y_j, r_j)} \cap \Bigl(\bigcup_{n=0}^i X_i\Bigr) = \varnothing
+\end{align}
+It's obvious that for all $n$, $\Bigl(\bigcup_{n=0}^n X_i\Bigr)$ is closed and has an empty interior as well. Hence, there exists a non-negative real number $r_{N+1}<2^{-(N+1)}$ and an element $y_{N+1}$ such that
+\begin{align*}
+    \overline{B(y_{N+1}, r_{N+1})} \subset B(y_N, r_N) \setminus \Bigl(\bigcup_{n=0}^{N+1} X_i\Bigr)
+\end{align*}
+The induction hypothesis is obviousy satisified and thereafter the construction proceeds inductively. The resulting sequence is cauchy since (1) implies for all $i < j$
+\[\abs{y_i-y_j} < r_i < \frac{1}{2^i}\]
+Therefore, $(y_n)$ converges to some $y\in B(x_0, r) \subset \Bigl(\bigcup_{n=0}^\i X_i\Bigr)$ hence there exists an integer $N_0$ such that $y\in X_{N_0}$ but for all $n>N_0$
+\[y_n \in B(y_{N_0+1}, r_{N_0+1})\]
+hence 
+\[y \in \overline{B(y_{N_0+1}, r_{N_0+1})}\]
+but since 
+\[\overline{B(y_{N_0+1}, r_{N_0+1})} \cap \Bigl(\bigcup_{n=0}^{N_0} X_i\Bigr) = \varnothing\]
+$y \not\in X_{N_0}$ which is a contradiction.
+\end{document}
