@@ -1,0 +1,37 @@
+\documentclass{pset}
+
+\renewcommand{\hmwkTitle}{Geometry Pointset}
+\renewcommand{\hmwkDueDate}{}
+\renewcommand{\hmwkClass}{Differential Topology}
+\renewcommand{\hmwkClassTime}{chapter 1}
+\renewcommand{\hmwkAuthorName}{Lucas Kurosei}
+
+
+\begin{document}
+
+\maketitle
+
+\pagebreak 
+\begin{problem}
+    Show that the continuous image of a connected space is connected.
+    \begin{proof}
+        Suppose $f\colon X \longrightarrow Y$ is a continuous map and $X$ is connected, suppose $f(X) = A\cup B$ where $A$ and $B$ are open and $A\cap B=\varnothing$. Therefore, $\inv f (A)$ and $\inv f (B)$ are open and disjoint and cover $X$ but since $X$ is connected either $\inv f (A)$ or $\inv f (B)$ is empty hence either $A$ or $B$ is empty.
+    \end{proof}
+\end{problem}
+\begin{problem}
+    prove that every open cover of a second countable space has a countalbe subcover.
+    \begin{proof}
+        Let $\mathscr B$ be a countable basis of $X$ and $\mcl O$ be an arbitrary cover of $X$. For all $p\in X$ there must exist a set $O_p$ in $\mcl O$ containing $p$. We associate with each set $O_p$ a set $B_p\in \mathscr B$ such that $p\in B_p\subseteq O_p$. Notice how
+        \[\bigcup_{p\in X} B_p = X\]
+        Define the relation $O_p \sim O_{p'}$ iff $B_p = B_{p'}$. By invoking the axiom of choice we can find a set of points $P\subseteq X$ such that
+        \[\{O_p \mid p\in P\}\]
+        takes a representative out of each equivalence class. This is an open cover of $X$ and it's also countable since 
+        \[\{B_p\mid p\in X\} \subseteq \mathscr B\]
+        is countable.
+    \end{proof}
+\end{problem}
+\subsection{exercises todo}
+\begin{enumerate}
+    \item prove that every open cover of a second countable space has a countalbe subcover.
+\end{enumerate}
+\end{document}

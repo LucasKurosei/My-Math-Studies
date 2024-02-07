@@ -1,0 +1,54 @@
+\documentclass{pset}
+
+\renewcommand{\hmwkTitle}{EDT Zürich's 2nd PSet}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{chapter 2}
+\renewcommand{\hmwkClassTime}{chapter 1}
+\renewcommand{\hmwkAuthorName}{}
+
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+\begin{problem}
+    Suppose $Z_n \to Z$ with probability 1. That means
+    \[0 = \P{\abs{Z_k-Z}\geq \eps \io} = \lim_{n\to\i} \P{\abs{Z_k-Z}\geq \eps, k\geq n}\]
+    hence there exists an $n\in\bN$ such that
+    \[\P{\abs{Z_k-Z}\geq \eps, k\geq n}< \eps\]
+    hence for all $m>n$,
+    \[\P{\abs{Z_k-Z}\geq \eps, n\leq k\leq m}< \eps\]
+    from which we finally get
+    \[\P{\abs{Z_k-Z}<  \eps, n\leq k\leq m}>1-\eps\]
+\end{problem}
+\setcounter{problemCounter}{4}
+\begin{problem}
+    trivial.
+\end{problem}
+\setcounter{problemCounter}{6}
+\begin{problem}
+    This follows the same pattern used to prove the strong law of large numbers. You need only prove that $E[X_j^2]$ is bounded as well which can easily be done using Lyapounov's inequality.
+\end{problem}
+\begin{problem}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $M=\sup \abs{x_n}$ and $N_1\in\bN$ such that
+        \[\frac{M}{n} < \eps\]
+        and $N_2\in\bN$ such that for all $n>N_2$
+        \[\abs{\frac{S_{n^2}}{n^2}}<\eps\]
+        and let $N=\max\{N_1, N_2^2\}$, hence for all $n>N$ there is an $k\in\bN$ such that $k^2\leq n<(k+1)^2$. Moreover,
+        \begin{align*}
+            \abs{\frac{S_n}{n}} &< \abs{\frac{S_{k^2}}{n}}+\abs{\frac{s_n-s_{k^2}}{n}} \\
+            &< \abs{\frac{S_{k^2}}{k^2}}+\abs{\frac{(2k+1)M}{k^2}} \\
+            &< \eps + 2\eps+\frac{1}{k^2}\eps \\
+            &< 4\eps
+        \end{align*}
+        and hence we're done.
+        \item It's obvious that
+        \[\{\omega\mid n^{-2}S_{n^2} \to 0\}\subset \{\omega\mid n^{-1}S_{n} \to 0\}\]
+        by the proceeding result, hence
+        \[1=P(n^{-2}S_{n^2})\leq P(n^{-1}S_{n}) \leq 1\]
+        and we are done.
+    \end{enumerate}
+\end{problem}
+\end{document}

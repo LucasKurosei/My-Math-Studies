@@ -1,0 +1,40 @@
+\documentclass{pset}
+
+\renewcommand{\hmwkTitle}{Smooth Manifolds}
+\renewcommand{\hmwkDueDate}{}
+\renewcommand{\hmwkClass}{Differential Topology}
+\renewcommand{\hmwkClassTime}{chapter 1}
+\renewcommand{\hmwkAuthorName}{Lucas Kurosei}
+
+
+\begin{document}
+
+\maketitle
+
+\pagebreak 
+\section{Preliminaries}
+\subsection{Proof Of The Inverse Function Theorem}
+\begin{enumerate}
+    \item Spivak bounds $\abs{f(x)-f(y)}$ and $\abs{D_if^j(x)-D_if^j(y)}$ using the assumption that $f$ is continuously differentiable.
+    \item WLOG, we assume $Df(a) = \Id$ to make stuff easier for ourselves
+    \item By considering the funciton $g(x) = f(x)-x$ and the bounds we found in 1. we can prove that 
+    \[\abs{x_1-x_2}\leq 2\abs{f(x_1)-f(x_2)}\]
+    for all $x_1,x_2$ in some closed rectangle $U$. Effectively proving $f_{\mid U}$ is injective.
+    \item All that remains to find a local inverse function for $f$ is to find a subset $W\subseteq f(U)$ onto which $f$ is surjective. To do that, consider the function 
+    \[g_y(x) = \abs{y-f(x)}^2 = \sum \abs{y^i-f^i(x)}^2\]
+    notice how $g_y(x)=0$ if $f(x)=y$ hence if we can guarentee that $g_y(x)$ always attains 0 for all $y$ in some open set in $f(U)$ then we've achieved our goal. There's a good reason why this choice of $g$ works and it's because $f$ is continuously differentiable. Another reason is that minimizing square difference is just very easy to work with. The details can be found in the rigorous proof but the gist of the argument is that you can make it so that $g_y$ always achieves its minimum in the interior of $U$ at which point the derivative of $g_y$ is surely null. i.e.
+    \[\sum 2(y^i-f^i(x))(Df^i(x)) = 0\]
+    but since we can make it so $Df^i(x)$ is non-singular for all $x\in U$ then it must be that $y-f(x)=0$
+\end{enumerate}
+\section{Notes}
+The gist of the chapter is rather simple, you're basically just trying to define and motivate smooth manifolds. It starts from topological manifolds and proves a bunch of facts about them and then goes on to try and make sense of a smooth or ``differential'' structure on manifolds and then it gives a bunch of example of smooth manifolds. The chapter ends with adding smooth structure to manifolds with boundry.
+\begin{quote}
+    We emphasize that a smooth structure is an additional piece of data that must be added to a topological manifold before we are entitled to talk about a “smooth manifold.” In fact, a given topological manifold may have many different smooth structures (see Example 1.23 and Problem 1-6). On the other hand, it is not always possible to find a smooth structure on a given topological manifold: there exist topological manifolds that admit no smooth structures at all. (The first example was a compact 10-dimensional manifold found in 1960 by Michel Kervaire [Ker60].)
+\end{quote}
+it's so over.
+\subsection{Local Coordinate Representations}
+\begin{quote}
+    The fact that manifolds do not come with any predetermined choice of coordinates is both a blessing and a curse. The flexibility to choose coordinates more or less arbitrarily can be a big advantage in approaching problems in manifold theory, because the coordinates can often be chosen to simplify some aspect of the problem at hand. But we pay for this flexibility by being obliged to ensure that any objects we wish to define globally on a manifold are not dependent on a particular choice of coordinates. There are generally two ways of doing this: either by writing down a coordinate-dependent definition and then proving that the definition gives the same results in any coordinate chart, or by writing down a definition that is manifestly coordinate-independent (often called an invariant definition). We will use the coordinate-dependent approach in a few circumstances where it is notably simpler, but for the most part we will give coordinate-free definitions whenever possible. The need for such definitions accounts for much of the abstraction of modern manifold theory. \emph{One of the most important skills you will need to acquire in order to use manifold theory effectively is an ability to switch back and forth easily between invariant descriptions and their coordinate counterparts.}
+\end{quote}
+I feel like this quote is very important to keep in mind.
+\end{document}

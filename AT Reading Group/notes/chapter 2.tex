@@ -1,0 +1,62 @@
+\documentclass{pset}
+\usepackage{indentfirst}
+\usepackage{quiver}
+\begin{document}
+\section{2.1 Simplicial and Singular Homology}
+\subsection{Exact Sequences and Excision}
+\indent The idea of the first part of the section is to figure out a way to relate $\H A$, $\H X$ and $\H {X, A}$. The way it does that is by linking them all in a long exact sequence. It then uses \emph{excision} to assert that in some cases
+\[\H {X, A} = \H {X/A}\]
+
+The idea behind the proof of 2.21 stand on constructing geometrically motivated homomorphisms: Taking the barycentric subdeivision process which is a purely geometric construction and turning that into an algebraic construction. Basically, given a space $X$ and bunch of sets $\mcl{U}$ whose interior form an open cover of $X$ and a singular simplex $\sigma\colon\Delta^n\to X$ you can chop that simplex up continuously into smaller and smaller singular simplices till the image of each singular simplex is contained entirely in some $U$ in $\mcl{U}$. Essentially, you construct a homomorphism $\rho\colon C_n(X)\to C_n^\mcl{U}(X)$. You then prove that $\rho$ is chain homotopy equivalent to the identity, hence the morphism it induces between $\H X$ and $H_n^\mcl{U}(X)$ is an isomorphism
+
+\subsection{Proof of The Five Lemma}
+\[\begin{tikzcd}
+	A & B & C & D & E \\
+	{A'} & {B'} & {C'} & {D'} & {E'}
+	\arrow["i", from=1-1, to=1-2]
+	\arrow["j", from=1-2, to=1-3]
+	\arrow["k", from=1-3, to=1-4]
+	\arrow["\ell", from=1-4, to=1-5]
+	\arrow["\epsilon", from=1-5, to=2-5]
+	\arrow["\delta", from=1-4, to=2-4]
+	\arrow["\gamma", from=1-3, to=2-3]
+	\arrow["\beta", from=1-2, to=2-2]
+	\arrow["\alpha"', from=1-1, to=2-1]
+	\arrow["{i'}"', from=2-1, to=2-2]
+	\arrow["{j'}"', from=2-2, to=2-3]
+	\arrow["{k'}"', from=2-3, to=2-4]
+	\arrow["\ell'"', from=2-4, to=2-5]
+\end{tikzcd}\]
+\begin{theorem}
+    If the above diagram is commutative, the rows are exact and $\alpha$, $\beta$, $\delta$ and $\epsilon$ are isomorphisms then so is $\gamma$.
+\end{theorem}
+\begin{proof}
+    First we proof that $\gamma$ is surjective: let $c'\in C'$, since $\delta$ is surjective there exists an element $d\in D$ such that $k'(c') = \delta(d)$. Since the diagram is commutative and the rows are exact we see that
+    \[\epsilon(\ell(d)) = \ell'(\delta(d)) = \ell'(k'(c')) = 0\]
+    but since $\epsilon$ is injective, $d\in\ker\ell$ hence $d\in\img k$, therefore there exists an element $c\in C$ such that
+    \[\delta(k(c)) = k'(\gamma(c)) = k'(c')\]
+    hence $c'-\gamma(c)\in\ker k'$ hence $c'-\gamma(c)\in\img j'$ hence there exists an element $b'\in B$ such that $j'(b') = c'-\gamma(c)$ but since $\beta$ is surjective, there exists an element $b\in B$ such that $j'(\beta(b)) = c'-\gamma(c)$ but we know that $j'(\beta(b)) = \gamma(j(b))$ hence
+    \[\gamma(c-j(b)) = \gamma(c) - \gamma(j(b)) = \gamma(c)+c'-\gamma(c) = c'\]
+    hence $c'\in\img \gamma$.
+
+    The proof that $\gamma$ is also injective is prolly similar and I'm too lazy to right it out.
+\end{proof}
+\subsubsection{remarks}
+\begin{enumerate}[label=\arabic*.]
+    \item What I'm seeing from the proof of the barycentric subdeivision lemma is that proving facts about the 
+\end{enumerate}
+\subsubsection{questions}
+\begin{enumerate}[label=\arabic*.]
+    \item Are constant chains cycles?
+    \begin{quote}
+        The answer is yes but that's not all, they're also \emph{boundries} hence null elements in any homology group.
+    \end{quote}
+\end{enumerate}
+\section{2.2 Computations and Applications}
+\subsection{Cellular Homology}
+
+\section{TODO}
+\begin{enumerate}
+	\item READ THE HOMOTOPY EXTENSION PROPERTY!!!
+\end{enumerate}
+\end{document}

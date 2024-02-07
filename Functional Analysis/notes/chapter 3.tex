@@ -1,0 +1,31 @@
+\documentclass{pset}
+
+\renewcommand{\hmwkTitle}{The Weak Topology}
+\renewcommand{\hmwkDueDate}{}
+\renewcommand{\hmwkClass}{Functional Analysis}
+\renewcommand{\hmwkClassTime}{chapter 3}
+\renewcommand{\hmwkAuthorName}{}
+
+
+\begin{document}
+
+\maketitle
+
+\pagebreak 
+\section{The Weak${}^\star$ Topology}
+\begin{itemize}
+    \item The most important fact that makes this topology interesting is that it makes the unit ball compact.
+\end{itemize}
+
+\section{Reflexive Spaces}
+\begin{itemize}
+    \item The proof of the Helly lemma essentially reformulates the lemma to a problem in $\bR^k$ which you can easily do given that we only have a finite amount of linear funcitonals $f_1, f_2, \dots, f_k\in E^\star$
+\end{itemize}
+\section{uniformly convex spaces}
+\begin{theorem}(Millman-Pettis)
+    Every \emph{uniformly convex} Banach space is reflexive
+\end{theorem}
+\begin{remark}
+    To prove this you essentially need to prove that $J(B_E) = B_{E^{\star\star}}$. To do that you need only prove that $J(B_E)$ (which is closed) is dense in $B_{E^{\star\star}}$. The idea is to transfer the density of $J(B_E)$ with respect to the $\sigma(E^{\star\star}, E^\star)$ to density in the strong topology using the uniform convexity of $E$. I tried using sequences $f_n$ and $x_n$ such that $\abs{\la \xi, f_n \ra} \to 1$ and $\la f_n, x_n \ra\to 1$ where $\norm{f_n}=\norm{\xi}=\norm{x_n}=1$ but that was doomed to fail without some more restriction on how we chose elements in our sequence since otherwise they could be arbitrarly away from each other.
+\end{remark}
+\end{document}

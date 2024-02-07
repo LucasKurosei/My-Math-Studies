@@ -1,0 +1,22 @@
+\documentclass{pset}
+
+\renewcommand{\hmwkTitle}{EDT Zürich's 2nd PSet}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{chapter 2}
+\renewcommand{\hmwkClassTime}{chapter 1}
+\renewcommand{\hmwkAuthorName}{}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak 
+\begin{problem}[3]
+    Suppose $(u, f)$ is a limit point of $G(T)$. This means there exists a sequence of elements $(u_n, Tu_n) \to (u, f)$ in the product norm $\norm{(u, v)} = \norm{u}_\i+\norm{v}_\i$. To prove that $G(T)$ we need only prove that $f=Tu$, (i.e. $Tu_n \xrightarrow{\norm{.}_\i} Tu$). Fix $n\in\bN$. Since $\overline{\Omega}$ is compact, the continuous function $T(u-u_n)$ attains its maximum at some point $x_0\in\overline{\Omega}$. Suppose first that $x_0\in\Omega$, since $\Omega$ is open there must exist an $r>0$ such that $B_r(x_0)\subset \Omega$ hence we get
+    \[\norm{T\left(\frac{\Chi_{B_r(x_0)}}{\mu(B_r(x_0))}(u-u_n)\right)}_{L^2} \leq \norm{T}\norm{\frac{\Chi_{B_r(x_0)}}{\mu(B_r(x_0))}(u-u_n)}_{L^2} \leq \norm{T}\norm{u-u_n}_\i\]
+    hence,
+    \[\frac{1}{\mu(B_r(x_0))} \left(\int_{B_r(x_0)} \left(T(u-u_n)\right)^2 \dd \mu\right)^{1/2}\leq \norm{T}\norm{u-u_n}_\i\]
+    and since $T(u-u_n)$ is continuous, the LHS goes to $T(u-u_n)(x_0)$ as $r$ goes to $0$
+\end{problem}
+
+\end{document}

@@ -1,0 +1,54 @@
+\documentclass{pset}
+
+\renewcommand{\hmwkTitle}{EDT Zürich's 2nd PSet}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{chapter 2}
+\renewcommand{\hmwkClassTime}{chapter 1}
+\renewcommand{\hmwkAuthorName}{}
+
+
+\begin{document}
+
+\maketitle
+
+\pagebreak 
+\begin{problem}
+    \begin{enumerate}[label=(\alph*)]
+        \item Define $I\colon \ell^1 \longrightarrow (c_0)^*$ as
+        \begin{align*}
+            (x_n)_{n\in\bN} &\mapsto I(x_n)_{n\in\bN} \\
+            I(x_n)\bigl((a_n)\bigr) &= \sum_{n=0}^\i x_na_n
+        \end{align*}
+        putting $c=\sum_{n=0}^\i \abs{x_n}<\i$, we see that $I(x_n)$ is evidantly bounded since
+        \begin{align*}
+            \abs{\sum_{n=0}^\i x_na_n} &\leq \sum_{n=0}^\i \abs{x_n}\abs{a_n} \\
+            &\leq \sum_{n=0}^\i \abs{x_n}\norm{(a_n)}_\i \\
+            &= c\norm{(a_n)}_\i
+        \end{align*}
+        to prove it's an isometry we need to prove $\norm{I(x_n)} = \norm{(x_n)}_1$, the above shows $\norm{I(x_n)} \leq \norm{(x_n)}_1$ so we need only prove the reverse inequality, to do that, consider the following sequence in $\bigl((a_n^{(i)})_{n\in\bN}\bigr)_{i\in\bN} \subset c_0$
+        \[
+            \begin{array}{ll}
+                a_n^{(i)} = \frac{\abs{x_n}}{x_n} & n\leq i \\
+                a_n^{(i)} = 0 & n>i
+            \end{array}
+        \]
+        clearly, $\norm{(a_n^{(i)})}_\i=1$ for all $i$ and
+        \[\abs{I(x_n)(a_n^{(i)})} = \biggl(\sum_{n=0}^i \abs{x_n}\biggr) \leq \norm{I(x_n)}\]
+        and by taking $i\to\i$ we get the desired inequality.
+        Now we need only prove it's bounded. To do that, let $\lambda\in c_0^*$. Set $(x_n)_{n\in\bN}$ as
+        \[x_n=\lambda\bigl((0, 0, \dots, \underset{\text{n-th term}}{1}, 0, \dots)\bigr)\]
+        that is, $x_n$ is the image of the sequence with all $0$s except at the $n$-th term. Taking $\bigl((a_n^{(i)})_{n\in\bN}\bigr)_{i\in\bN} \subset c_0$ to be the sequence from before, notice that
+        \[\lambda(a_n^{(i)}) = \sum_{n=0}^\i \abs{x_n} \leq \norm{\lambda} < \i\]
+        taking $i\to\i$ proves $(x_n)\in\ell^1$ and it's easy to see that
+        \[I(x_n)=\lambda\]
+        since both are continuous and the space $c_{00}$ of sequences with finitely many non-zero terms is dense in $c_0$
+        \item Define $\tilde{I}\colon \ell^\i \longrightarrow (\ell^1)^*$ as
+        \begin{align*}
+            (x_n)_{n\in\bN} &\mapsto \tilde{I}(x_n)_{n\in\bN} \\
+            \tilde{I}(x_n)\bigl((a_n)\bigr) &= \sum_{n=0}^\i x_na_n
+        \end{align*}
+        as before, the proof follows the exact same format as (a) and we will not repeat it here.
+        \item Define $\lambda\colon \ell^\i \longrightarrow \bR$ as
+    \end{enumerate}
+\end{problem}
+\end{document}

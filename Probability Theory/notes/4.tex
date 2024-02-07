@@ -1,0 +1,23 @@
+\documentclass{pset}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\renewcommand{\hmwkTitle}{EDT Zürich's 2nd PSet}
+\renewcommand{\hmwkDueDate}{February 12, 2014}
+\renewcommand{\hmwkClass}{chapter 2}
+\renewcommand{\hmwkClassTime}{chapter 1}
+\renewcommand{\hmwkAuthorName}{}
+
+
+\begin{document}
+
+\maketitle
+\pagebreak
+
+\section{Random Variables and Distributions}
+\begin{list}{\labelitemi}{\leftmargin=1em}
+    \item Theorem 20.1 gives a nice constructive alternative definition for $\sigma(X)$ and a characterization of all random variables that're $\sigma(X)$-measurable.
+    \item The distribution of a random variable holds all the probabilistic data of the variable, but it tells you nothing about the underlying probability space ergo nothing about how the random variable interacts with other variables. This should be obvious if you recall that, for example, given two random variables $X$ and $Y$, $P(X\in H)$ might be equal to $P(Y\in H)$ but $\inv X(H)$ and $\inv Y(H)$ might look completely different.
+    \item The book then defines distributions ($\mu=P\inv X$) and distribution functions ($F(x) = \mu(-\i, x]$) and then gives a bunch of examples and calculations.
+    \item The relations between density functions and distribution functions isn't super clear in my mind :(. I might feel more comfortable regarding them when I review measure theoretic differentiation. 
+\end{list}
+\end{document}

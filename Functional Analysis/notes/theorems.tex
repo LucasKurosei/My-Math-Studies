@@ -1,7 +1,7 @@
 \documentclass{pset}
 
 \begin{document}
-\section{Proof of The Theorem}
+\section{Baire Category Theorem}
 Suppose there exists an $x_0$ in $\Int \Bigl(\bigcup_{n=0}^\i X_i\Bigr)$, this means there exists an $r>0$ such that
 \[B(x_0, r) \subset \Bigl(\bigcup_{n=0}^\i X_i\Bigr)\]
 To arrive at a contradiction we are going to construct a sequence that converges to an element $y\in B(x_0, r)$ but $y \not\in X_n$ for all $n$:
@@ -24,4 +24,12 @@ hence
 but since 
 \[\overline{B(y_{N_0+1}, r_{N_0+1})} \cap \Bigl(\bigcup_{n=0}^{N_0} X_i\Bigr) = \varnothing\]
 $y \not\in X_{N_0}$ which is a contradiction.
+
+\section{Stampacchia}
+\begin{theorem}
+    Assume that $a(u,v)$ is a continuous coercive bilinear form on $H$. Let $K \subset H$ be a nonempty closed and convex subset. Then, given any $\varphi\in H^*$, there exists a unique element $u\in K$ such that
+    \[a(u, v-u) \leq \la \varphi, v-u \ra\]
+    Moreover, if $a$ is symmetric then $u$ is characterized by the property 
+    \[u\in K \text{ and } \quad \frac{1}{2}a(u, u) -\la \phi, u \ra = \min_{v\in K} \frac{1}{2}a(v, v) -\la \phi, v \ra\]
+\end{theorem}
 \end{document}

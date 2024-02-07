@@ -1,0 +1,26 @@
+\documentclass{pset}
+\renewcommand{\hmwkTitle}{Banach Spaces}
+
+\begin{document}
+The idea I'm contemplating right now is to find a countable subset $S'$ of $X$ that's dense with respect to the \emph{weak topology}. And then using Mazure's lemma and then just put 
+\[S=\{rx+(1-r)y \mid x,y\in S', r\in \bQ \cap [0, 1]\}\]
+ which is countable. Now for $S'$ to be dense with respect to the weak topology it must possess the property that for any $x\in X$ there must exist a sequence $(x_n)\subset S'$ such that for all $f\in X^*$
+\[\lim_{n\to\i} f(x_n) = f(x)\]
+which includes all $f\in F$. Hence, $S'$ must possess the mentioned property at least for elements of $F$. In light of that, consider the subspace of $\bigotimes_{n\in\bN} \bR$
+\[V=\{(\phi_n(x))_{n\in\bN} \mid x\in X\}\]
+That is, the subspace containing all possible values of $(\phi_1(x), \phi_2(x), \dots)$. let $U$ be a countable dense subset of $V$ and set $S'$ as
+\[S'=\{x \mid (\phi_n(x))_{n\in\bN}\in U\}\]
+I have two issues with this idea however: First, $V$ might not be separable. I \emph{think} it is since it's a subspace of a separable space ($\bigoplus_{n\in\bN} \bQ$ is a countable dense subset of $\bigotimes_{n\in\bN} \bR$ in the product topology). Second, I might be able to prove that that for all $x \in X$ there exists a sequence $(x_n)\subset S'$ such that for all $i\in\bN$
+\[\lim_{n\to\i} \phi_i(x_n) = \phi_i(x)\]
+but how do I prove that
+\[\lim_{n\to\i} f(x_n) = f(x)\]
+for an arbitrary $f\in X^*$? At first I thought I can take a converging sequence $\phi_i \to f$ we can then see that 
+\begin{align*}
+    \abs{f(x)-f(x_n)} &\leq \abs{f(x)-\phi_i(x)} + \abs{\phi_i(x)-\phi_i(x_n)}+\abs{\phi_i(x_n)-f(x_n)} 
+\end{align*}
+But I'm unable to go anywhere from here since I can't know for sure that $(\norm{x})_{n\in\bN}$ is bounded.
+
+What do you think? is there merit to this idea? Is there maybe a better approach? It seems so convoluted that I think a better idea \emph{must} exist. Any help would be appreciated.
+
+\pagebreak
+\end{document}
